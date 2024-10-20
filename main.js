@@ -13,3 +13,8 @@ selectSize.addEventListener("click", (event) => {
         // Update the product price displayed
         productPrice.textContent = `$${price}.00`;
     });
+
+
+    // Task 3 - Handle Stock Availability
+
+    
