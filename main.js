@@ -22,7 +22,7 @@ const purchaseButton = document.getElementById("purchase-button");
 
 selectSize.addEventListener("change", function(event) {
     const selectedOption = event.target.selectedOptions[0];
-    const stock = Number(selectedOption.getAttribute("data-stock")); // Replaced parseInt with Number()
+    const stock = Number(selectedOption.getAttribute("data-stock")); 
 
 
     // Update stock status and enable/disable purchase button based on stock
@@ -46,6 +46,7 @@ purchaseButton.addEventListener("click", function() {
     const selectedOption = selectSize.selectedOptions[0];
     const stock = Number(selectedOption.getAttribute("data-stock"));
 
+    // Alert message will pop up if purchase was successful
     if (stock > 0) {
         alert("Purchase successful!");
     } 
