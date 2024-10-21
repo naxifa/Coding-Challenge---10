@@ -32,9 +32,12 @@ selectSize.addEventListener("change", function(event) {
     } else {
         stockStatus.textContent = "Out of Stock";
         purchaseButton.disabled = true;
+
+    // Display message if product is out of stock
+    alert("Sorry, this product is currently out of stock.");
+
     }
 });
-  
 
 
 // Task 4 - Create a Checkout Event
@@ -45,8 +48,7 @@ purchaseButton.addEventListener("click", function() {
 
     if (stock > 0) {
         alert("Purchase successful!");
-    } else {
-        alert("Sorry, this product is currently out of stock.");
-    }
+    } 
 });
+
 
