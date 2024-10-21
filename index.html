@@ -3,26 +3,55 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <body style="background-color:rgb(246, 221, 238);"></body>
+   
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+
     <title>JavaScript Basics Challenge</title>
+
+    <style>
+         body {
+            background-color: rgb(246, 221, 238);
+            display: flex;
+            justify-content: center;
+            align-items: flex-start; /* Aligns items to the top */
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            background-color: white;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 80px; /* Adjust this value to move the container lower or higher */
+        }
+
+        h2, select, button, p {
+            margin: 10px 0; /* Adds space between elements */
+        }
+    </style>    
 </head>
 <body>
+    <div class="container">
+         
     <h2 id="product-name"> Dewy Boost Moisturizer </h2>
     
-    
     <label for="select-size">Choose a size:</label>
+
     <select id="select-size">
-        <option value="50 ml" data-price="20" data-stock="12">Small: In Stock</option>
-        <option value="75 ml" data-price="25" data-stock="9">Medium: In Stock</option>
-        <option value="100 ml" data-price="30" data-stock="0">Large: Out of Stock</option>
+        <option value="50 ml" data-price="20" data-stock="12">Small</option>
+        <option value="75 ml" data-price="25" data-stock="9">Medium</option>
+        <option value="100 ml" data-price="30" data-stock="0">Large</option>
     </select>
     
     <button id="purchase-button">Purchase</button>
     
     <p id="product-price"> Price - $20.00</p>
-
+    <p id="stock-status">In Stock</p>
 
     <script src="main.js"></script>
 </body>

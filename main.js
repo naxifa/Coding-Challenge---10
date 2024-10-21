@@ -17,22 +17,16 @@ selectSize.addEventListener("change", function(event) {
 
     // Task 3 - Handle Stock Availability
 
-// Accessing HTML elements
 const stockStatus = document.getElementById("stock-status");
 const purchaseButton = document.getElementById("purchase-button");
 
+selectSize.addEventListener("change", function(event) {
+    const selectedOption = event.target.selectedOptions[0];
+    const stock = Number(selectedOption.getAttribute("data-stock")); // Replaced parseInt with Number()
 
 
-// Add change event listener to size dropdown
-sizeSelect.addEventListener("change", function(event) {
-    const selectedSize = event.target.value;
-    const selectedStock = stock[selectedSize];
-
-    // Update the product price based on selected size
-    productPrice.textContent = `$${selectedStock.price}.00`;
-
-    // Update stock status and enable/disable purchase button
-    if (selectedStock.available > 0) {
+    // Update stock status and enable/disable purchase button based on stock
+    if (stock > 0) {
         stockStatus.textContent = "In Stock";
         purchaseButton.disabled = false;
     } else {
@@ -40,5 +34,19 @@ sizeSelect.addEventListener("change", function(event) {
         purchaseButton.disabled = true;
     }
 });
+  
 
+
+// Task 4 - Create a Checkout Event
+
+purchaseButton.addEventListener("click", function() {
+    const selectedOption = selectSize.selectedOptions[0];
+    const stock = Number(selectedOption.getAttribute("data-stock"));
+
+    if (stock > 0) {
+        alert("Purchase successful!");
+    } else {
+        alert("Sorry, this product is currently out of stock.");
+    }
+});
 
